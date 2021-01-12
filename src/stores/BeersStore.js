@@ -94,7 +94,7 @@ class BeersStore {
     for (let fBeer of this.favorites) {
       for (let beer of this.beers) {
         if (fBeer.id === beer.id) {
-          beer.isFavorite = true;
+          beer.isFavorite = !beer.isFavorite;
         }
       }
     }
