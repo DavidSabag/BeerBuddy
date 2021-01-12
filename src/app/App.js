@@ -11,9 +11,9 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/browse" component={Browse} />
-          <Route path="/favorites" component={Favorites} />
-          <Redirect from="/" to={"/browse"} />
+          <Route path="/home-assignment/browse" component={Browse} />
+          <Route path="/home-assignment/favorites" component={Favorites} />
+          <Redirect from="/" to={"/home-assignment/browse"} />
         </Switch>
       </BrowserRouter>
     </>
