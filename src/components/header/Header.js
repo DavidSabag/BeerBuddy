@@ -9,7 +9,7 @@ import "./Header.scss";
 const Header = () => {
   const manageStore = useContext(ManageStore);
   const isMarked = manageStore.isMarked;
-
+  
   return (
     <>
       <Navbar bg="dark" variant="dark" className="header">
