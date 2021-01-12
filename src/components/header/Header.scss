@@ -1,0 +1,42 @@
+/* Buzz Out */
+@import '../../styles/bazz-out.scss';
+
+.buzz-next:hover + .hvr-buzz-out  {
+    animation-name: hvr-buzz-out;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    
+}
+
+.header{
+    background-color: #ceb237 !important;
+    box-shadow: 10px 10px 10px gray ; 
+    padding: 0 ;
+    display: flex ;
+    opacity: 0.99 ;
+}
+@import "../../styles/underlines.scss";
+
+.navbar-brand{
+    margin-left: 30px;
+}
+.beer-img{
+    width: 30px; 
+    height: 30px;
+    margin: 0 10px 5px 0;
+}
+a{
+    color: white;
+}
+.b-lbl{
+    margin: 8px 5px 0 0;
+    cursor: pointer;
+}
+.mark-route{
+    color: #0056b3;
+    pointer-events: none;
+}
