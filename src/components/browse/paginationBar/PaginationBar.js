@@ -10,24 +10,26 @@ const PaginationBar = () => {
   const { active, paginationRange } = manageStore;
   let startPoint = paginationRange[0];
   let endIndex = paginationRange.length - 1;
-  let endPoint = paginationRange[endIndex] +1;
+  let endPoint = paginationRange[endIndex] + 1;
 
   return (
     <>
       <Pagination className="pag-container">
         <Pagination.First
           onClick={() => {
-            beersStore.setIsNextPage(true)
-            manageStore.getPaginationRange(1)}
-          }
+            beersStore.setIsNextPage(true);
+            manageStore.getPaginationRange(1);
+            
+          }}
           className={startPoint === 1 ? "disabled" : ""}
         />
         <Pagination.Prev
           className={startPoint === 1 ? "disabled" : ""}
-          onClick={() =>{ 
-            beersStore.setIsNextPage(true)
-            manageStore.getPaginationRange(--startPoint)}
-          }
+          onClick={() => {
+            beersStore.setIsNextPage(true);
+            manageStore.getPaginationRange(--startPoint);
+            
+          }}
         />
         {manageStore.paginationRange.map((pNum, key) => (
           <Pagination.Item
@@ -35,6 +37,7 @@ const PaginationBar = () => {
             onClick={() => {
               manageStore.setActive(pNum);
               beersStore.getBeers(pNum);
+              
             }}
             className={pNum === active ? "active" : ""}
           >

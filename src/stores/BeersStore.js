@@ -4,6 +4,7 @@ import beerApi from "../endpoints/beer.api";
 
 class BeersStore {
   @observable beers = [];
+  @observable favorites = [];
   @observable status = 200;
   @observable error = {};
   @observable isNextPage = true;
@@ -49,6 +50,7 @@ class BeersStore {
       setTimeout(() => {
         this.beers = [];
         this.beers = data;
+        this.updateFavorite(data);
       }, 0);
     }
   }
@@ -62,6 +64,48 @@ class BeersStore {
   @action
   setIsNextPage(bool) {
     this.isNextPage = bool;
+  }
+
+  @action
+  toggleFavorite(beerId) {
+    for (let beer of this.beers) {
+      if (beer.id === beerId) {
+        beer.isFavorite = !beer.isFavorite;
+        if (beer.isFavorite) this.addFavorite(beer);
+        else this.removeFavorite(beerId);
+      }
+    }
+  }
+
+  @action
+  addFavorite(favorite) {
+    favorite.isFavorite = true;
+    this.favorites.push(favorite);
+  }
+
+  @action
+  removeFavorite(favoriteId) {
+    const beer = this.favorites.find((favorite) => favorite.id === favoriteId);
+    const beerIndex = this.favorites.indexOf(beer);
+    this.favorites.splice(beerIndex, 1);
+  }
+  @action
+  updateFavorite() {
+    for (let fBeer of this.favorites) {
+      for (let beer of this.beers) {
+        if (fBeer.id === beer.id) {
+          beer.isFavorite = true;
+        }
+      }
+    }
+  }
+  @action
+  setRank(rank, id) {
+    for (let beer of this.favorites) {
+      if (beer.id === id) {
+        beer.rank = rank;
+      }
+    }
   }
 }
 

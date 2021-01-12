@@ -20,7 +20,9 @@ const Header = () => {
         <Link
           to={"/home-assignment/browse"}
           className={isMarked ? "mark-route" : ""}
-          onClick={() => manageStore.toggleMarkedRoutes()}
+          onClick={() => {
+            manageStore.toggleMarkedRoutes();
+          }}
         >
           <label className="buzz-next b-lbl"> Browse Beers </label>
           <img src={BeerImg} className="hvr-buzz-out beer-img" alt="" />

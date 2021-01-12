@@ -1,19 +1,32 @@
 import React, { useRef, useContext } from "react";
 import { useToasts } from "react-toast-notifications";
 import { observer } from "mobx-react-lite";
-import { ManageStore } from "../../stores/index";
+import { ManageStore, BeersStore } from "../../stores/index";
 import Cardpopover from "./cardpopover/Cardpopover";
 import noImg from "../../assets/img/No_image.png";
 import favorite from "../../assets/img/favorite.png";
 import unfavorite from "../../assets/img/unfavorite.png";
+import Rank from '../favorites/rank/Rank'
 import "./Card.scss";
 
-const Card = ({ name, image_url, tagline, description, brewers_tips }) => {
+const Card = ({
+  id,
+  name,
+  image_url,
+  tagline,
+  description,
+  brewers_tips,
+  isFavorite,
+  isFromFav,
+  rank
+}) => {
   const manageStore = useContext(ManageStore);
-  const toggleFavorite = manageStore.toggleFavorite;
+  const beersStore = useContext(BeersStore);
+  const toggleFavoriteStar = manageStore.toggleFavoriteStar;
   const imgRef = useRef();
   const cardRef = useRef();
   const { addToast } = useToasts();
+  //console.log(rank)
   return (
     <>
       <div
@@ -34,12 +47,13 @@ const Card = ({ name, image_url, tagline, description, brewers_tips }) => {
         <label className="name-lbl">{name}</label>
         <img
           ref={imgRef}
-          src={unfavorite}
+          src={isFavorite ? favorite : unfavorite}
           alt=""
           className="favorite"
           onClick={(e) => {
             e.stopPropagation();
-            toggleFavorite(imgRef, favorite, unfavorite);
+            beersStore.toggleFavorite(id);
+            toggleFavoriteStar(imgRef, isFavorite);
           }}
         />
         <img
@@ -51,6 +65,10 @@ const Card = ({ name, image_url, tagline, description, brewers_tips }) => {
           alt="img"
           className={image_url ? "card-img" : "card-img stretch"}
         />
+        {
+          isFromFav? (<Rank {...{id, rank}}/>) : ""
+        }
+        
       </div>
     </>
   );
