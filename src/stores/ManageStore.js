@@ -9,6 +9,7 @@ class ManageStore {
   @observable active = 1;
   @observable isFavorite = false;
   @observable isFirstLoad = true;
+  @observable containerRef = {};
 
 
   constructor() {
@@ -35,6 +36,13 @@ class ManageStore {
     } else {
       imgRef.current.src = unfavorite;
     }
+  }
+  @action
+  animateRemoveFav(){
+    const favoritesCards = this.containerRef.current.childNodes
+    favoritesCards.forEach(card => {
+      card.className += " removed-item"
+    });
   }
 
   

@@ -6,7 +6,8 @@ import Cardpopover from "./cardpopover/Cardpopover";
 import noImg from "../../assets/img/No_image.png";
 import favorite from "../../assets/img/favorite.png";
 import unfavorite from "../../assets/img/unfavorite.png";
-import Rank from '../favorites/rank/Rank'
+import Rank from "../favorites/rank/Rank";
+import WarningCard from "../../components/favorites/warning/WarningCard";
 import "./Card.scss";
 
 const Card = ({
@@ -18,7 +19,7 @@ const Card = ({
   brewers_tips,
   isFavorite,
   isFromFav,
-  rank
+  rank,
 }) => {
   const manageStore = useContext(ManageStore);
   const beersStore = useContext(BeersStore);
@@ -26,7 +27,6 @@ const Card = ({
   const imgRef = useRef();
   const cardRef = useRef();
   const { addToast } = useToasts();
-  //console.log(rank)
   return (
     <>
       <div
@@ -52,8 +52,16 @@ const Card = ({
           className="favorite"
           onClick={(e) => {
             e.stopPropagation();
-            beersStore.toggleFavorite(id);
-            toggleFavoriteStar(imgRef, isFavorite);
+            if (isFavorite && isFromFav) {
+              addToast(<WarningCard {...{id,cardRef,imgRef,isFavorite}}/>, {
+                appearance: "warning",
+                autoDismiss: true,
+              });
+            }else{
+              beersStore.toggleFavorite(id);
+              toggleFavoriteStar(imgRef, isFavorite);
+
+            }            
           }}
         />
         <img
@@ -65,10 +73,7 @@ const Card = ({
           alt="img"
           className={image_url ? "card-img" : "card-img stretch"}
         />
-        {
-          isFromFav? (<Rank {...{id, rank}}/>) : ""
-        }
-        
+        {isFromFav ? <Rank {...{ id, rank }} /> : ""}
       </div>
     </>
   );

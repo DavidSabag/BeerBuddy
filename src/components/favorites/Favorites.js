@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { observer } from "mobx-react-lite";
-import { BeersStore } from "../../stores/index";
+import { BeersStore, ManageStore } from "../../stores/index";
 import Card from "../card/Card";
 import Button from "react-bootstrap/Button";
 import { useToasts } from "react-toast-notifications";
@@ -10,7 +10,10 @@ import "./Favorites.scss";
 
 const Favorites = () => {
   const beerStore = useContext(BeersStore);
+  const manageStore = useContext(ManageStore);
   const favorite = beerStore.favorites;
+  const containerRef = useRef();
+  manageStore.containerRef = containerRef;
   const { addToast } = useToasts();
   return (
     <>
@@ -37,7 +40,7 @@ const Favorites = () => {
           Remove All
         </Button>
         <div>
-          <div className="d-flex flex-wrap  justify-content-start">
+          <div className="d-flex flex-wrap  justify-content-start" ref={containerRef}>
             {favorite.map((beer, key) => {
               return <Card {...beer} isFromFav={true} key={key} />;
             })}
