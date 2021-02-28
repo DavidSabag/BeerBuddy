@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/home-assignment/static/css/main.3df4b01b.chunk.css",
-    "main.js": "/home-assignment/static/js/main.18bcf074.chunk.js",
-    "main.js.map": "/home-assignment/static/js/main.18bcf074.chunk.js.map",
-    "runtime-main.js": "/home-assignment/static/js/runtime-main.f0992153.js",
-    "runtime-main.js.map": "/home-assignment/static/js/runtime-main.f0992153.js.map",
-    "static/css/2.1f208231.chunk.css": "/home-assignment/static/css/2.1f208231.chunk.css",
-    "static/js/2.7fe8ecbc.chunk.js": "/home-assignment/static/js/2.7fe8ecbc.chunk.js",
-    "static/js/2.7fe8ecbc.chunk.js.map": "/home-assignment/static/js/2.7fe8ecbc.chunk.js.map",
-    "index.html": "/home-assignment/index.html",
-    "static/css/2.1f208231.chunk.css.map": "/home-assignment/static/css/2.1f208231.chunk.css.map",
-    "static/css/main.3df4b01b.chunk.css.map": "/home-assignment/static/css/main.3df4b01b.chunk.css.map",
-    "static/js/2.7fe8ecbc.chunk.js.LICENSE.txt": "/home-assignment/static/js/2.7fe8ecbc.chunk.js.LICENSE.txt",
-    "static/media/No_image.ec3f217a.png": "/home-assignment/static/media/No_image.ec3f217a.png",
-    "static/media/Card.scss": "/home-assignment/static/media/Spinner.12c6e136.svg",
-    "static/media/beer2.82011c5a.png": "/home-assignment/static/media/beer2.82011c5a.png",
-    "static/media/favorite.c663327f.png": "/home-assignment/static/media/favorite.c663327f.png",
-    "static/media/unfavorite.e20f26b1.png": "/home-assignment/static/media/unfavorite.e20f26b1.png"
+    "main.css": "/BeerBuddy/static/css/main.14ba5a90.chunk.css",
+    "main.js": "/BeerBuddy/static/js/main.3e6afca8.chunk.js",
+    "main.js.map": "/BeerBuddy/static/js/main.3e6afca8.chunk.js.map",
+    "runtime-main.js": "/BeerBuddy/static/js/runtime-main.635f0eb4.js",
+    "runtime-main.js.map": "/BeerBuddy/static/js/runtime-main.635f0eb4.js.map",
+    "static/css/2.1f208231.chunk.css": "/BeerBuddy/static/css/2.1f208231.chunk.css",
+    "static/js/2.1e5461e7.chunk.js": "/BeerBuddy/static/js/2.1e5461e7.chunk.js",
+    "static/js/2.1e5461e7.chunk.js.map": "/BeerBuddy/static/js/2.1e5461e7.chunk.js.map",
+    "index.html": "/BeerBuddy/index.html",
+    "static/css/2.1f208231.chunk.css.map": "/BeerBuddy/static/css/2.1f208231.chunk.css.map",
+    "static/css/main.14ba5a90.chunk.css.map": "/BeerBuddy/static/css/main.14ba5a90.chunk.css.map",
+    "static/js/2.1e5461e7.chunk.js.LICENSE.txt": "/BeerBuddy/static/js/2.1e5461e7.chunk.js.LICENSE.txt",
+    "static/media/No_image.ec3f217a.png": "/BeerBuddy/static/media/No_image.ec3f217a.png",
+    "static/media/Card.scss": "/BeerBuddy/static/media/Spinner.12c6e136.svg",
+    "static/media/beer2.82011c5a.png": "/BeerBuddy/static/media/beer2.82011c5a.png",
+    "static/media/favorite.c663327f.png": "/BeerBuddy/static/media/favorite.c663327f.png",
+    "static/media/unfavorite.e20f26b1.png": "/BeerBuddy/static/media/unfavorite.e20f26b1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f0992153.js",
+    "static/js/runtime-main.635f0eb4.js",
     "static/css/2.1f208231.chunk.css",
-    "static/js/2.7fe8ecbc.chunk.js",
-    "static/css/main.3df4b01b.chunk.css",
-    "static/js/main.18bcf074.chunk.js"
+    "static/js/2.1e5461e7.chunk.js",
+    "static/css/main.14ba5a90.chunk.css",
+    "static/js/main.3e6afca8.chunk.js"
   ]
 }
