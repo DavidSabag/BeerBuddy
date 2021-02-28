@@ -18,7 +18,7 @@ const Header = () => {
         </Navbar.Brand>
 
         <Link
-          to={"/home-assignment/browse"}
+          to={"/BeerBuddy/browse"}
           className={isMarked ? "mark-route" : ""}
           onClick={() => {
             manageStore.toggleMarkedRoutes();
@@ -29,7 +29,7 @@ const Header = () => {
         </Link>
 
         <Link
-          to={"/home-assignment/favorites"}
+          to={"/BeerBuddy/favorites"}
           className={!isMarked ? "mark-route " : ""}
           onClick={() => manageStore.toggleMarkedRoutes()}
         >

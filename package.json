@@ -1,6 +1,6 @@
 {
-  "homepage": "http://DavidSabag.github.io/home-assignment",
-  "name": "home-assignment",
+  "homepage": "http://DavidSabag.github.io/BeerBuddy",
+  "name": "BeerBuddy",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

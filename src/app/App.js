@@ -13,9 +13,9 @@ const App = () => {
         <ToastProvider autoDismiss autoDismissTimeout={30000}>
           <Header />
           <Switch>
-            <Route path="/home-assignment/browse" component={Browse} />
-            <Route path="/home-assignment/favorites" component={Favorites} />
-            <Redirect from="/" to={"/home-assignment/browse"} />
+            <Route path="/BeerBuddy/browse" component={Browse} />
+            <Route path="/BeerBuddy/favorites" component={Favorites} />
+            <Redirect from="/" to={"/BeerBuddy/browse"} />
           </Switch>
         </ToastProvider>
       </BrowserRouter>
